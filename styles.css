@@ -25,12 +25,17 @@ form {
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 50%;
+  height: auto;
   border: 3px solid black;
 }
 
 .form-item {
   padding: 10px 0px;
+  width: 50%;
+}
+
+input {
+  width: 100%;
 }
 
 #submit-button {
@@ -51,7 +56,7 @@ input:focus:invalid {
 .error {
   width: 100%;
   padding: 0;
-
+  display: block;
   font-size: 80%;
   color: white;
   background-color: #900;
