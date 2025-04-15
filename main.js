@@ -1,24 +1,31 @@
 const form = document.querySelector("form");
 const inputs = document.querySelectorAll("input");
+const submitButton = document.getElementById("submit-button");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (!form.checkValidity()) {
+    alert("Please correct form mistakes before submitting.");
+  } else {
+    alert("Awesome! Your form has been submitted.");
+  }
+});
 
 inputs.forEach((input) => {
   const errorSpan = input.nextElementSibling;
 
-  input.addEventListener("input", (event) => {
+  input.addEventListener("blur", (event) => {
     if (input.validity.valid) {
       errorSpan.textContent = "";
       errorSpan.className = "error";
     } else {
-      console.log(`There is an error with this value. Input: ${input}`);
       showError(input, errorSpan);
     }
   });
 });
 
 function showError(input, errorSpan) {
-  console.log(`Input: ${input} Error span: ${errorSpan}`);
   if (input.validity.valueMissing) {
-    console.log(`Type: ${input.name} or ${input.id}`);
     errorSpan.textContent = `A valid ${input.name || input.id} is required.`;
   } else if (input.validity.typeMismatch) {
     errorSpan.textContent = `You must enter a valid ${input.name || input.id}.`;
