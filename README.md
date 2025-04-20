@@ -1,5 +1,7 @@
+# Form Validation Project
+
 ## Introduction
-A small form validation project built as part of The Odin Project curriculum. The form uses custom JavaScript validation to provide live, inline feedback as the user fills it out.
+A small form validation project built as part of The Odin Project curriculum. The form uses custom JavaScript validation to provide live, inline feedback as the user fills it out. A live preview can be found [here](https://williamandrews2.github.io/FormValidation/).
 
 ## Features
 - Live inline validation for:
